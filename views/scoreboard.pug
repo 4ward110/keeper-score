@@ -5,52 +5,37 @@ block content
     session
         table.table
             thead
-            tr
-                th(scope='col') 
-                th(scope='col') Player1
-                th(scope='col') Player2
-                th(scope='col') Player3
-                th(scope='col') Player4
-            tr
-                th(scope='col') Total score
-                th(scope='col') 12
-                th(scope='col') 1231
-                th(scope='col') 1314
-                th(scope='col') 23142
-            tbody
-            tr
-                th(scope='row') 1
-                td 
-                    input(type="number")
-                td 
-                    input(type="number")
-                td 
-                    input(type="number")
-                td 
-                    input(type="number")
-
-            tr
-                th(scope='row') 2
-                td 
-                    input(type="number")
-                td 
-                    input(type="number")
-                td 
-                    input(type="number")
-                td 
-                    input(type="number")
-            tr
-                th(scope='row') 3
-                td 
-                    input(type="number")
-                td 
-                    input(type="number")
-                td 
-                    input(type="number")
-                td 
-                    input(type="number")
+                tr
+                    th(scope='col') 
+                    th(scope='col')= game.player1
+                    th(scope='col')= game.player2
+                    th(scope='col')= game.player3
+                    th(scope='col')= game.player4
+                tr
+                    th(scope='col') Total score
+                    th(scope='col') 12
+                    th(scope='col') 1231
+                    th(scope='col') 1314
+                    th(scope='col') 23142
+            tbody#body
+                each round in score
+                    tr
+                        th(scope='row')= `${score.indexOf(round)+1}`
+                        td 
+                            input(type="number",value=`${round[0]}`)
+                        td 
+                            input(type="number",value=`${round[1]}`)
+                        td 
+                            input(type="number",value=`${round[2]}`)
+                        td 
+                            input(type="number",value=`${round[3]}`)
         div.text-center
-            button.btn.btn-danger Add round
+            button.btn.btn-danger#addRow Add round
+        script(src="./add.row.js")          
+
+        
+        
+        
 
 
 

@@ -20,9 +20,11 @@ app.get('/:gameId', (req,res) => {
     var id = req.params.gameId;
     var game = db.get("games").find({ id: id}).value();
     console.log(game);
-    // res.cookie('gameid',id);
+    console.log(game.score);
     res.render('scoreboard.pug',{
-        game: game
+        game: game,
+        score: game.score,
+        id: id
     });
 })
 
