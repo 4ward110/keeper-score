@@ -11,27 +11,26 @@ block content
                     th(scope='col')= game.player2
                     th(scope='col')= game.player3
                     th(scope='col')= game.player4
-                tr
+                tr#total
                     th(scope='col') Total score
-                    th(scope='col') 12
-                    th(scope='col') 1231
-                    th(scope='col') 1314
-                    th(scope='col') 23142
+                    each val in totalScore
+                        th(scope='col' id="score")= val
             tbody#body
                 each round in score
                     tr
                         th(scope='row')= `${score.indexOf(round)+1}`
                         td 
-                            input(type="number",value=`${round[0]}`)
+                            input(type="number",id="0", name=`${score.indexOf(round)+1}`,value=`${round[0]}`)
                         td 
-                            input(type="number",value=`${round[1]}`)
+                            input(type="number",id="1", name=`${score.indexOf(round)+1}`,value=`${round[1]}`)
                         td 
-                            input(type="number",value=`${round[2]}`)
+                            input(type="number",id="2", name=`${score.indexOf(round)+1}`,value=`${round[2]}`)
                         td 
-                            input(type="number",value=`${round[3]}`)
+                            input(type="number",id="3", name=`${score.indexOf(round)+1}`,value=`${round[3]}`)
         div.text-center
             button.btn.btn-danger#addRow Add round
-        script(src="./add.row.js")          
+        script(src="./add.row.js")
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')          
 
         
         
