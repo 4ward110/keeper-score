@@ -19,12 +19,15 @@ app.set('views','./views');
 
 app.get('/:gameId', (req,res) => {
     var id1 = req.params.gameId;
-    // var game = db.get("games").find({ id: id}).value();
 
     const fileData = fs.readFileSync("db.json", {encoding:"utf-8"});
     const dataList = JSON.parse(fileData);
     var currentGame = dataList['games'].find( ({id}) => id === id1 );
-    // var score = currentGame.score[number-1];
+    if(!currentGame){
+        res.send("Ko co ID nay");
+        return;
+    }
+    res.cookie('gameid',id1);
     res.render('scoreboard.pug',{
         game: currentGame,
         score: currentGame.score,
