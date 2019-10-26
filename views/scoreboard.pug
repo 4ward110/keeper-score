@@ -20,13 +20,13 @@ block content
                     tr
                         th(scope='row')= `${score.indexOf(round)+1}`
                         td 
-                            input(type="number",id="0", name=`${score.indexOf(round)+1}`,value=`${round[0]}`)
+                            input(type="number",id="0", name=`${score.indexOf(round)+1}`,value=`${round[0]}`).form-control
                         td 
-                            input(type="number",id="1", name=`${score.indexOf(round)+1}`,value=`${round[1]}`)
+                            input(type="number",id="1", name=`${score.indexOf(round)+1}`,value=`${round[1]}`).form-control
                         td 
-                            input(type="number",id="2", name=`${score.indexOf(round)+1}`,value=`${round[2]}`)
+                            input(type="number",id="2", name=`${score.indexOf(round)+1}`,value=`${round[2]}`).form-control
                         td 
-                            input(type="number",id="3", name=`${score.indexOf(round)+1}`,value=`${round[3]}`)
+                            input(type="number",id="3", name=`${score.indexOf(round)+1}`,value=`${round[3]}`).form-control
         div.text-center
             button.btn.btn-danger#addRow Add round
         script(src="./add.row.js")
