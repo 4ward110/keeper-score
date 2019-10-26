@@ -28,10 +28,10 @@ button.addEventListener(`click`, () => {
             var round = allScore[allScore.length-1];
             var newScoreBox = document.createElement('tr');
             newScoreBox.innerHTML = `<th scope='row'>${allScore.length}</th>`+
-            `<td><input id="0" type='number' name="${allScore.length}" value="${round[0]}"/></td>`+
-            `<td><input id="1" type='number' name="${allScore.length}" value="${round[1]}"/></td>`+
-            `<td><input id="2" type='number' name="${allScore.length}" value="${round[2]}"/></td>`+
-            `<td><input id="3" type='number' name="${allScore.length}" value="${round[3]}"/></td>`
+            `<td><input id="0" class="form-control" type='number' name="${allScore.length}" value="${round[0]}"/></td>`+
+            `<td><input id="1" class="form-control" type='number' name="${allScore.length}" value="${round[1]}"/></td>`+
+            `<td><input id="2" class="form-control" type='number' name="${allScore.length}" value="${round[2]}"/></td>`+
+            `<td><input id="3" class="form-control" type='number' name="${allScore.length}" value="${round[3]}"/></td>`
             document.getElementById("body").appendChild(newScoreBox);
             
             var changeValue = document.getElementsByTagName("input");
