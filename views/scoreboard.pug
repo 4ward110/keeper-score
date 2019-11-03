@@ -7,10 +7,9 @@ block content
             thead
                 tr
                     th(scope='col') 
-                    th(scope='col')= game.player1
-                    th(scope='col')= game.player2
-                    th(scope='col')= game.player3
-                    th(scope='col')= game.player4
+                    each player in game
+                        th(scope='col')= player
+
                 tr#total
                     th(scope='col') Total score
                     each val in totalScore
